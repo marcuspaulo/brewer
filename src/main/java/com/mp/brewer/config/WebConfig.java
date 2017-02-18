@@ -19,6 +19,8 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.mp.brewer.controller.CerverjasController;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
 /**
  * Classe de Configuração do Spring. 
  * Ela encontra os componentes através do ComponentScan
@@ -51,6 +53,8 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		SpringTemplateEngine engine = new SpringTemplateEngine();
 		engine.setEnableSpringELCompiler(true);
 		engine.setTemplateResolver(templateResolver());
+		
+		engine.addDialect(new LayoutDialect());
 		return engine;
 	}
 	

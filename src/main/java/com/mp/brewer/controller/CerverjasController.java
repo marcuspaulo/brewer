@@ -22,6 +22,7 @@ public class CerverjasController {
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
 	public String cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
 		if(result.hasErrors()) {
+			System.out.println("-");
 			return novo(cerveja);
 		}
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
