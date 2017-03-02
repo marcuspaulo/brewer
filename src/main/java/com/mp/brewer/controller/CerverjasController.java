@@ -2,6 +2,8 @@ package com.mp.brewer.controller;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,9 +15,15 @@ import com.mp.brewer.model.Cerveja;
 
 @Controller
 public class CerverjasController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(CerverjasController.class);
 
 	@RequestMapping("/cervejas/novo")
 	public String novo(Cerveja cerveja) {
+		
+		if(logger.isDebugEnabled()) {
+			logger.info("O Objeto Cerveja eh: " + cerveja);
+		}
 		return "cerveja/CadastroCerveja";
 	}
 	
