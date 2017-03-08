@@ -7,6 +7,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 
 import com.mp.brewer.config.JPAConfig;
 import com.mp.brewer.config.WebConfig;
+import com.mp.brewer.config.service.ServiceConfig;
 
 /**
  * Classe Responsável por Configurar a Inicialização do Projeto, 
@@ -18,7 +19,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { JPAConfig.class };
+		return new Class<?>[] { JPAConfig.class, ServiceConfig.class };
 	}
 
 	@Override
